@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CrudController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+
+Route::get("/", [CrudController::class, "index"])->name("crud.index");
+Route::post("/crear-producto", [CrudController::class, "create"])->name("crud.create");
+
+/*Route::get('/', function () {
     return view('welcome');
    
 });
@@ -34,4 +39,4 @@ Route::get('/ofertas/{name_ofer}/{categoria?}', function($name_ofer, $categoria=
         return 'Usted esta en el catalogo:'.$name_ofer;
     }
 
-});
+});*/
