@@ -28,33 +28,45 @@
         <div class="modal fade" id="modalRegistrar" tabindex="-1" aria-labelledby="modalRegistrarLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="modalRegistrarLabel">Agregar producto</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                    
-                                        <div class="mb-3">
-                                            <label for="camporeg1" class="form-label">Código del producto:</label>
-                                            <input type="text" class="form-control" id="campoteg1" name="id_producto">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="modalRegistrarLabel">Agregar producto</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
-                                        <div class="mb-3">
-                                            <label for="camporeg2" class="form-label">Nombre del producto:</label>
-                                            <input type="text" class="form-control" id="camporeg2" name="nombre_producto">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="camporeg3" class="form-label">Categoría:</label>
-                                            <input type="text" class="form-control" id="campoeg3" name="categoria">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="camporeg4" class="form-label">Precio unitario:</label>
-                                            <input type="text" class="form-control" id="camporeg4" name="p_venta">
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                        <button type="submit" class="btn btn-primary">Guardar</button>
-                                    </div>
+                                        <div class="modal-body">
+                                            <form action="{{route('crud.create')}}" method="POST">
+                                                @csrf
+                                                <div class="mb-3">
+                                                    <label for="camporeg1" class="form-label">Código del producto:</label>
+                                                    <input type="text" class="form-control" id="camporeg1" name="txtid_producto">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="camporeg2" class="form-label">Nombre del producto:</label>
+                                                    <input type="text" class="form-control" id="camporeg2" name="txtnombre">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="camporeg3" class="form-label">Categoría:</label>
+                                                    <select name="txtcategoria" class="form-select">
+                                                        <option>Informática</option>
+                                                        <option>Limpieza</option>
+                                                        <option>Muebles</option>
+                                                        <option>Iluminación</option>
+                                                        <option>Accesorios informática</option>
+                                                        <option>Audio</option>
+                                                        <option>Energía</option>
+                                                        <option>Telefonía</option>
+                                                    </select>
+                                                    <!--<input type="text" class="form-control" id="campoeg3" name="txtcategoria">-->
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="camporeg4" class="form-label">Precio unitario:</label>
+                                                    <input type="text" class="form-control" id="camporeg4" name="txtp_venta">
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                                    <button type="submit" class="btn btn-primary">Registrar</button>
+                                                </div>
+                                            </form>
+                                        </div>   
                                     </div>
                                 </div>
          </div>
@@ -90,33 +102,34 @@
                             <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="modalEditarLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="modalEditarLabel">Editar registro</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                    
-                                        <div class="mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label">Código del producto:</label>
-                                            <input type="text" class="form-control" id="campo1" name="id_producto">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="modalEditarLabel">Editar registro</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
-                                        <div class="mb-3">
-                                            <label for="exampleFormControlTextarea1" class="form-label">Nombre del producto:</label>
-                                            <input type="text" class="form-control" id="campo2" name="nombre_producto">
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="mb-3">
+                                                    <label for="exampleFormControlInput1" class="form-label">Código del producto:</label>
+                                                    <input type="text" class="form-control" id="campo1" name="id_producto">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="exampleFormControlTextarea1" class="form-label">Nombre del producto:</label>
+                                                    <input type="text" class="form-control" id="campo2" name="nombre_producto">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="exampleFormControlTextarea1" class="form-label">Categoría:</label>
+                                                    <input type="text" class="form-control" id="campo3" name="categoria">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="exampleFormControlTextarea1" class="form-label">Precio unitario:</label>
+                                                    <input type="text" class="form-control" id="campo4" name="p_venta">
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                                    <button type="submit" class="btn btn-primary">Guardar</button>
+                                                </div>
+                                            </form>
                                         </div>
-                                        <div class="mb-3">
-                                            <label for="exampleFormControlTextarea1" class="form-label">Categoría:</label>
-                                            <input type="text" class="form-control" id="campo3" name="categoria">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="exampleFormControlTextarea1" class="form-label">Precio unitario:</label>
-                                            <input type="text" class="form-control" id="campo4" name="p_venta">
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                        <button type="submit" class="btn btn-primary">Guardar</button>
-                                    </div>
                                     </div>
                                 </div>
                             </div>
