@@ -24,7 +24,12 @@
     
     <body>
         <h1 class="text-center p-3">LISTADO PRODUCTOS</h1>  
-        
+        @if (session("correcto"))
+            <div class="alert alert-success">{{session("correcto")}}</div>
+        @endif
+        @if (session("incorrecto"))
+            <div class="alert alert-danger">{{session("incorrecto")}}</div>
+        @endif          
         <div class="modal fade" id="modalRegistrar" tabindex="-1" aria-labelledby="modalRegistrarLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
@@ -37,7 +42,7 @@
                                                 @csrf
                                                 <div class="mb-3">
                                                     <label for="camporeg1" class="form-label">Código del producto:</label>
-                                                    <input type="text" class="form-control" id="camporeg1" name="txtid_producto">
+                                                    <input type="text" class="form-control" id="camporeg1" name="txtid">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="camporeg2" class="form-label">Nombre del producto:</label>
@@ -59,7 +64,7 @@
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="camporeg4" class="form-label">Precio unitario:</label>
-                                                    <input type="text" class="form-control" id="camporeg4" name="txtp_venta">
+                                                    <input type="text" class="form-control" id="camporeg4" name="txtprecio">
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -72,7 +77,7 @@
          </div>
         
         <div class="p-5 table-responsive">
-            <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalRegistrar" >Agregar producto</button>
+            <button class="btn btn-success btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#modalRegistrar" ><i class="fa-solid fa-plus"></i>&nbspAgregar producto</button>
             <table class="table table-striped table-abordered table-hover">
                 <thead>
                     <tr class="bg-primary text-white text-center">

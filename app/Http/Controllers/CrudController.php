@@ -19,17 +19,20 @@ class CrudController extends Controller
 
     }
     public function create(Request $request){
-      /* $sql=DB::insert("insert into productos (id_producto, nombre_producto, categoria, p_venta) values (?,?,?,?)",[
-        $request->txtid_producto,
-        $request->nombre_producto,
-        $request->txtcategoria,
-        $request->txtp_venta
-        ]);
+        try{
+            $sql=DB::insert("insert into productos (id_producto, nombre_producto, categoria, p_venta) values (?,?,?,?)",[
+                $request->txtid,
+                $request->txtnombre,
+                $request->txtcategoria,
+                $request->txtprecio
+                ]);
+        }catch(\Throwable $th){
+            $sql=0;
+        }
         if($sql==true){
-            return $request;
+            return back()->with("correcto","Producto registrado!");
         }else{
-            return false;
-        }*/
-        return $request;
+            return back()->with("incorrecto","Producto no fue registrado!");
+        }        
     }
 }
