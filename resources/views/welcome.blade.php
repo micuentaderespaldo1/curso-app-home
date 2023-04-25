@@ -23,7 +23,7 @@
     </head>
     
     <body>
-        <h1 class="text-center p-3">LISTADO PRODUCTOS</h1>  
+        <h1 class="text-center p-2">CATALOGO DE PRODUCTOS</h1>  
         @if (session("correcto"))
             <div class="alert alert-success">{{session("correcto")}}</div>
         @endif
@@ -78,7 +78,7 @@
         
         <div class="p-5 table-responsive">
             <button class="btn btn-success btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#modalRegistrar" ><i class="fa-solid fa-plus"></i>&nbspAgregar producto</button>
-            <table class="table table-striped table-abordered table-hover">
+            <table class="table table-striped table-bordered table-hover">
                 <thead>
                     <tr class="bg-primary text-white text-center">
                     <th scope="col">CODIGO</th>
@@ -96,7 +96,7 @@
                         <td>{{$item->categoria}}</td>
                         <td align="right"><b>$</b>&nbsp{{$item->p_venta}}</td>
                         <td class="text-center">
-                            <a href="" data-bs-toggle="modal" data-bs-target="#modalEditar" class="btn btn-warning btn-sm">
+                            <a href="" data-bs-toggle="modal" data-bs-target="#modalEditar{{$item->id_producto}}" class="btn btn-warning btn-sm">
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </a>
                             <a href="" class="btn btn-danger btn-sm">
@@ -104,7 +104,7 @@
                             </a></td>
 
                             <!-- Modal EDITAR-->
-                            <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="modalEditarLabel" aria-hidden="true">
+                            <div class="modal fade" id="modalEditar{{$item->id_producto}}" tabindex="-1" aria-labelledby="modalEditarLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -114,20 +114,20 @@
                                         <div class="modal-body">
                                             <form>
                                                 <div class="mb-3">
-                                                    <label for="exampleFormControlInput1" class="form-label">Código del producto:</label>
-                                                    <input type="text" class="form-control" id="campo1" name="id_producto">
+                                                    <label for="campo1" class="form-label">Código del producto:</label>
+                                                    <input type="text" class="form-control" id="campo1" name="txtid2" value="{{$item->id_producto}}" readonly>
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label for="exampleFormControlTextarea1" class="form-label">Nombre del producto:</label>
-                                                    <input type="text" class="form-control" id="campo2" name="nombre_producto">
+                                                    <label for="campo2" class="form-label">Nombre del producto:</label>
+                                                    <input type="text" class="form-control" id="campo2" name="txtnombre2" value="{{$item->nombre_producto}}" readonly>
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label for="exampleFormControlTextarea1" class="form-label">Categoría:</label>
-                                                    <input type="text" class="form-control" id="campo3" name="categoria">
+                                                    <label for="campo3" class="form-label">Categoría:</label>
+                                                    <input type="text" class="form-control" id="campo3" name="txtcategoria2" value="{{$item->categoria}}" readonly>
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label for="exampleFormControlTextarea1" class="form-label">Precio unitario:</label>
-                                                    <input type="text" class="form-control" id="campo4" name="p_venta">
+                                                    <label for="campo4" class="form-label">Precio unitario:</label>
+                                                    <input type="text" class="form-control" id="campo4" name="txtprecio2" value="{{$item->p_venta}}" readonly>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
