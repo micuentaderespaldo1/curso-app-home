@@ -117,11 +117,11 @@
                                                 @csrf
                                                 <div class="mb-3">
                                                     <label for="campo1" class="form-label">Código del producto:</label>
-                                                    <input type="text" class="form-control" id="campo1" name="txtid2" value="{{$item->id_producto}}" readonly>
+                                                    <input type="text" class="form-control" id="campo1" name="editid" value="{{$item->id_producto}}" readonly>
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="campo2" class="form-label">Nombre del producto:</label>
-                                                    <input type="text" class="form-control" id="campo2" name="txtnombre2" value="{{$item->nombre_producto}}">
+                                                    <input type="text" class="form-control" id="campo2" name="editnombre" value="{{$item->nombre_producto}}">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="campo3" class="form-label">Categoría:</label>
@@ -133,13 +133,13 @@
                                                             $cadena.="<option".$sel.">".$catname."</option>";
                                                         }
                                                     @endphp
-                                                    <select name="txtcategoria2" id="campo3" class="form-select">
+                                                    <select name="editcategoria" id="campo3" class="form-select">
                                                         @php echo $cadena; @endphp
                                                     </select>
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="campo4" class="form-label">Precio unitario:</label>
-                                                    <input type="text" class="form-control" id="campo4" name="txtprecio2" value="{{$item->p_venta}}">
+                                                    <input type="text" class="form-control" id="campo4" name="editprecio" value="{{$item->p_venta}}">
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
