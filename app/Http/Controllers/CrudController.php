@@ -35,4 +35,21 @@ class CrudController extends Controller
             return back()->with("incorrecto","Producto no fue registrado!");
         }        
     }
+    public function update(Request $request){
+        try{
+            $sql=DB::update("update productos set nombre_producto=?, categoria=?, p_venta=? where id_producto=?",[
+                $request->$txtnombre2,
+                $request->$txtcategoria2,
+                $request->$txtprecio2,
+                $request->$txtid2
+            ]);
+        }catch(\Throwable $th){
+            $sql=0;
+        }
+        if($sql==true){
+            return back()->with("correcto", "Los cambios fueron guradados para el producto ".$request->txtid2);
+        }else{
+            return back()->with("incorrecto", "¡No se guardaron los cambios para el producto ".$request->txtid2."!");
+        }
+    }
 }

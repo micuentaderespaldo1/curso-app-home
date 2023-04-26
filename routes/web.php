@@ -16,7 +16,8 @@ use App\Http\Controllers\CrudController;
 
 
 Route::get("/", [CrudController::class, "index"])->name("crud.index");
-Route::post("/crear-producto", [CrudController::class, "create"])->name("crud.create");
+Route::post("/create-product", [CrudController::class, "create"])->name("crud.create");
+Route::post("/update-product", [CrudController::class, "update"])->name("crud.update");
 
 /*Route::get('/', function () {
     return view('welcome');
