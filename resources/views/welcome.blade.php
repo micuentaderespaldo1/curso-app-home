@@ -19,7 +19,7 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>-->
-
+            <script>
     </head>
     
     <body>
@@ -100,7 +100,7 @@
                             <a href="" data-bs-toggle="modal" data-bs-target="#modalEditar{{$item->id_producto}}" class="btn btn-warning btn-sm">
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </a>
-                            <a href="" class="btn btn-danger btn-sm">
+                            <a href="{{route('crud.delete',$item->id_producto)}}" cnclick="ret confirmar()" class="btn btn-danger btn-sm">
                                 <i class="fa-solid fa-trash"></i>
                             </a></td>
 

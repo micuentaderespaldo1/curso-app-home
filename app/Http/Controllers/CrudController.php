@@ -52,4 +52,17 @@ class CrudController extends Controller
             return back()->with("incorrecto", "¡No se guardaron los cambios para el producto ".$request->editid."! ");
         }
     }
+    public function delete($id){
+        try{
+            $sqld=DB::dalete("delete from productos where id_producto=$id");
+        }catch(\Throwable $th){
+            $sqld=0;
+        }
+        if($sqld==true){
+            return back()->with("correcto", "El producto ".$request->editid." fué elimnado");
+        }else{
+            return back()->with("incorrecto", "¡No se eliminó el producto ".$request->editid."! ");
+        }
+
+    }
 }
