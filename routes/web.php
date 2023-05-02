@@ -19,7 +19,10 @@ Route::get("/", [CrudController::class, "index"])->name("crud.index");
 Route::post("/create-product", [CrudController::class, "create"])->name("crud.create");
 Route::post("/update-product", [CrudController::class, "update"])->name("crud.update");
 Route::get("/delete-product-{id}", [CrudController::class, "delete"])->name("crud.delete");
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8acefbb0130152058b676ee478af32328229b2e4
 /*Route::get('/', function () {
     return view('welcome');
    

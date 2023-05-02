@@ -19,12 +19,16 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>-->
+<<<<<<< HEAD
         <script>
             var res = function(){
                 var not = confirm("Desea eliminar el producto");
                 return not;
             }
         </script>
+=======
+            <script>
+>>>>>>> 8acefbb0130152058b676ee478af32328229b2e4
     </head>
     
     <body>
@@ -105,7 +109,11 @@
                             <a href="" data-bs-toggle="modal" data-bs-target="#modalEditar{{$item->id_producto}}" class="btn btn-warning btn-sm">
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </a>
+<<<<<<< HEAD
                             <a href="{{route('crud.delete',$item->id_producto)}}" onclick="return res()" class="btn btn-danger btn-sm">
+=======
+                            <a href="{{route('crud.delete',$item->id_producto)}}" cnclick="ret confirmar()" class="btn btn-danger btn-sm">
+>>>>>>> 8acefbb0130152058b676ee478af32328229b2e4
                                 <i class="fa-solid fa-trash"></i>
                             </a></td>
 

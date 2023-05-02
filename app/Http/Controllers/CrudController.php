@@ -54,11 +54,16 @@ class CrudController extends Controller
     }
     public function delete($id){
         try{
+<<<<<<< HEAD
             $sqld=DB::delete("delete from productos where id_producto='$id'");
+=======
+            $sqld=DB::dalete("delete from productos where id_producto=$id");
+>>>>>>> 8acefbb0130152058b676ee478af32328229b2e4
         }catch(\Throwable $th){
             $sqld=0;
         }
         if($sqld==true){
+<<<<<<< HEAD
             return back()->with("correcto", "El producto ".$id." fué eliminado");
         }else{
             return back()->with("incorrecto", "¡No se eliminó el producto ".$id."! ");
@@ -66,3 +71,12 @@ class CrudController extends Controller
 
     }
 }
+=======
+            return back()->with("correcto", "El producto ".$request->editid." fué elimnado");
+        }else{
+            return back()->with("incorrecto", "¡No se eliminó el producto ".$request->editid."! ");
+        }
+
+    }
+}
+>>>>>>> 8acefbb0130152058b676ee478af32328229b2e4
